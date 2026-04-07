@@ -14,7 +14,6 @@
     <main class="page-shell">
       <section class="hero">
         <p class="eyebrow">AltStore Quick Start</p>
-        <h1>Download AltStore PAL and add the Anne Ferret source</h1>
         <p class="intro">
           This page summarizes the current installation flow from
           <a href="https://altstore.io/download" target="_blank" rel="noreferrer">
@@ -40,6 +39,13 @@
           >
             Open NotifyMe in AltStore
           </a>
+          <button
+            class="secondary-button"
+            type="button"
+            data-copy-source="https://altstore.anneferret.eu/source.json"
+          >
+            Copy source in clipboard
+          </button>
           <a
             class="image-button"
             href="altstore://source/?url=https://altstore.anneferret.eu/source.json"
@@ -53,28 +59,7 @@
             />
           </a>
         </div>
-      </section>
-
-      <section class="card">
-        <h2>Requirements from the official page</h2>
-        <ul>
-          <li>Use Safari, Chrome, or Vivaldi on iPhone or iPad.</li>
-          <li>Your device needs to be physically located in the European Union or Japan.</li>
-          <li>You must be signed in to an EU or Japanese App Store account.</li>
-          <li>Your device must be running iOS or iPadOS 18.0 or newer.</li>
-        </ul>
-      </section>
-
-      <section class="card note">
-        <h2>Custom source button</h2>
-        <p>
-          The image button above opens this link:
-          <code>altstore://source/?url=https://altstore.anneferret.eu/source.json</code>.
-        </p>
-        <p>
-          It will only work on a device where AltStore is already installed and the
-          <code>altstore://</code> URL scheme is recognized.
-        </p>
+        <p class="copy-feedback" data-copy-feedback aria-live="polite"></p>
       </section>
 
       <section class="card scan-card">
@@ -96,5 +81,39 @@
         </div>
       </section>
     </main>
+    <script>
+      const copyButton = document.querySelector("[data-copy-source]");
+      const copyFeedback = document.querySelector("[data-copy-feedback]");
+
+      async function copySourceURL() {
+        const sourceURL = copyButton?.dataset.copySource;
+
+        if (!copyButton || !copyFeedback || !sourceURL) {
+          return;
+        }
+
+        try {
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(sourceURL);
+          } else {
+            const helper = document.createElement("textarea");
+            helper.value = sourceURL;
+            helper.setAttribute("readonly", "");
+            helper.style.position = "absolute";
+            helper.style.left = "-9999px";
+            document.body.appendChild(helper);
+            helper.select();
+            document.execCommand("copy");
+            helper.remove();
+          }
+
+          copyFeedback.textContent = "Source URL copied to clipboard.";
+        } catch (error) {
+          copyFeedback.textContent = "Copy failed. Please copy the source URL manually.";
+        }
+      }
+
+      copyButton?.addEventListener("click", copySourceURL);
+    </script>
   </body>
 </html>

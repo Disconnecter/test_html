@@ -122,6 +122,8 @@ li {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.9);
   color: var(--accent-deep);
+  cursor: pointer;
+  font: inherit;
   font-weight: 700;
   text-decoration: none;
   box-shadow: 0 14px 30px rgba(31, 36, 48, 0.08);
@@ -174,17 +176,12 @@ ul {
   padding-left: 1.35rem;
 }
 
-code {
-  padding: 0.18rem 0.42rem;
-  border-radius: 0.45rem;
-  background: rgba(31, 122, 224, 0.08);
-  color: var(--text);
-  font-family: "SFMono-Regular", Consolas, monospace;
-  font-size: 0.95em;
-}
-
-.note {
-  background: var(--surface-strong);
+.copy-feedback {
+  min-height: 1.7rem;
+  margin: 1rem 0 0;
+  color: var(--accent-deep);
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .scan-card {
