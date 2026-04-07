@@ -159,6 +159,42 @@ code {
   background: var(--surface-strong);
 }
 
+.scan-card {
+  display: grid;
+  grid-template-columns: minmax(260px, 300px) 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.scan-card-image {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.scan-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.scan-card-copy h2 {
+  margin-bottom: 0.9rem;
+}
+
+@media (max-width: 760px) {
+  .scan-card {
+    grid-template-columns: 1fr;
+  }
+
+  .scan-card-image {
+    max-width: 300px;
+  }
+}
+
 @media (max-width: 640px) {
   .page-shell {
     width: min(100% - 1rem, 960px);
