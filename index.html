@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AltStore Download Guide</title>
+    <meta
+      name="description"
+      content="Simple GitHub Pages site with AltStore PAL download instructions and a custom source button."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <p class="eyebrow">AltStore Quick Start</p>
+        <h1>Download AltStore PAL and add the Anne Ferret source</h1>
+        <p class="intro">
+          This page summarizes the current installation flow from
+          <a href="https://altstore.io/download" target="_blank" rel="noreferrer">
+            altstore.io/download
+          </a>
+          and gives you a one-tap button for adding the custom source in AltStore.
+        </p>
+
+        <div class="actions">
+          <a
+            class="primary-button"
+            href="https://altstore.io/download"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open Official Download Page
+          </a>
+          <a
+            class="image-button"
+            href="altstore://source/?url=https://altstore.anneferret.eu/source.json"
+            aria-label="Add Anne Ferret AltStore Source"
+          >
+            <img
+              src="assets/altstore-button.png"
+              alt="Add to AltStore"
+              width="280"
+              height="82"
+            />
+          </a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>How to install AltStore PAL</h2>
+        <ol>
+          <li>Tap the official download button and allow the Marketplace Installation prompt from AltStore LLC.</li>
+          <li>Open the Settings app and allow marketplace access for AltStore LLC under your Apple ID section.</li>
+          <li>Return to the official download page, tap download again, and confirm the App Marketplace installation.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>Requirements from the official page</h2>
+        <ul>
+          <li>Use Safari, Chrome, or Vivaldi on iPhone or iPad.</li>
+          <li>Your device needs to be physically located in the European Union or Japan.</li>
+          <li>You must be signed in to an EU or Japanese App Store account.</li>
+          <li>Your device must be running iOS or iPadOS 18.0 or newer.</li>
+        </ul>
+      </section>
+
+      <section class="card note">
+        <h2>Custom source button</h2>
+        <p>
+          The image button above opens this link:
+          <code>altstore://source/?url=https://altstore.anneferret.eu/source.json</code>.
+        </p>
+        <p>
+          It will only work on a device where AltStore is already installed and the
+          <code>altstore://</code> URL scheme is recognized.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
