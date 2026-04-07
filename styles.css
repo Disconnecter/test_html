@@ -148,23 +148,6 @@ li {
   box-shadow: 0 22px 44px rgba(20, 87, 166, 0.34);
 }
 
-.image-button {
-  display: inline-flex;
-  border-radius: 18px;
-  transition: transform 160ms ease;
-}
-
-.image-button:hover,
-.image-button:focus-visible {
-  transform: translateY(-2px);
-}
-
-.image-button img {
-  display: block;
-  width: min(280px, 100%);
-  height: auto;
-}
-
 .card {
   margin-top: 1.5rem;
   padding: 2rem;
@@ -244,8 +227,7 @@ ul {
   }
 
   .primary-button,
-  .secondary-button,
-  .image-button {
+  .secondary-button {
     width: 100%;
   }
 }
